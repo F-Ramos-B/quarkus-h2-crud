@@ -1,7 +1,6 @@
 package br.com.stefanini.maratonadev.dao;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.enterprise.context.RequestScoped;
 
@@ -17,18 +16,5 @@ public class TodoDao {
 	public List<Todo> listar() {
 		return Todo.listAll();
 	}
-	
-	public Optional<Todo> recuperarPorId(Long id) {
-		return Todo.findByIdOptional(id);
-	}
-	
-	public void remover(Long id) {
-		Todo.deleteById(id);
-	}
-	
-	public void alterar(Todo todo) {
-		Todo.update("nome = ?1 where id = ?2", todo.getNome(), todo.getId());
-	}
-	
 	
 }
